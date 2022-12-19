@@ -22,7 +22,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, reactive, computed } from "vue";
+import { ref, reactive, computed, watch } from "vue";
 
 const appTitle = "My Counter App";
 
@@ -30,6 +30,14 @@ const counterData = reactive({
   count: 0,
   counterTitle: "Day Counter",
 });
+
+//watcher
+watch(
+  () => counterData.count,
+  (mvalue, oldvalue) => {
+    console.log("new Value: " + mvalue, "old Value: " + oldvalue);
+  }
+);
 
 const oddOrEven = computed(() => {
   if (counterData.count % 2 === 0) return "Even";

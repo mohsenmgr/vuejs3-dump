@@ -16,19 +16,48 @@
 
     <div class="edit">
       <h4>Edit Counter title:</h4>
-      <input v-model="counterData.counterTitle" type="text" />
+      <input v-model="counterData.counterTitle" type="text" v-autofocus />
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { ref, reactive, computed, watch } from "vue";
+import {
+  ref,
+  reactive,
+  computed,
+  watch,
+  onBeforeMount,
+  onMounted,
+  onBeforeUnmount,
+  onUnmounted,
+} from "vue";
+
+import { vAutofocus } from "@/directives/vAutofocus";
 
 const appTitle = "My Counter App";
 
 const counterData = reactive({
   count: 0,
   counterTitle: "Day Counter",
+});
+
+onBeforeMount(() => {
+  console.log("on Before Mount is fired");
+});
+
+//Executes when our component is loaded in to the browser
+onMounted(() => {
+  console.log("on Mounted is fired");
+});
+
+onBeforeUnmount(() => {
+  console.log("On Before Unmount is fired");
+});
+
+//Executes when our component is unloaded in to the browser
+onUnmounted(() => {
+  console.log("On Unmounted is fired");
 });
 
 //watcher

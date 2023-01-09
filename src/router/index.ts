@@ -18,6 +18,11 @@ const router = createRouter({
       component: () => import('../views/PostsView.vue')
     },
     {
+      path: '/modal',
+      name: 'modal',
+      component: () => import('../views/ModalView.vue')
+    },
+    {
       path: '/postDetail/:id',
       name: 'postDetail',
       // route level code-splitting

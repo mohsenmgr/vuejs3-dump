@@ -5,6 +5,7 @@ import { RouterLink, RouterView } from "vue-router";
 <template>
   <nav>
     <RouterLink to="/">Home</RouterLink>
+    <RouterLink to="/modal">Modal</RouterLink>
     <RouterLink to="/posts">Posts</RouterLink>
   </nav>
 

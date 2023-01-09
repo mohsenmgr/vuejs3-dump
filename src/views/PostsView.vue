@@ -1,7 +1,6 @@
 <template>
+  <h1>Posts</h1>
   <div class="posts">
-    <h1>Posts</h1>
-
     <ul>
       <li v-for="post in posts" :key="post.id">
         <RouterLink :to="`/postDetail/${post.id}`">{{ post.title }}</RouterLink>
@@ -30,6 +29,10 @@ const posts = ref([
 </script>
 
 <style scoped>
+.posts {
+  width: 100%;
+}
+
 ul {
   margin-bottom: 13px;
 }
